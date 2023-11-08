@@ -5,11 +5,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration=production --base-href \"https://zenanj.github.io/ECE_FYDP_2024/\"",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npx angular-cli-ghpages --dir=dist/carpool-web-ui"
   },
   "private": true,
   "dependencies": {
