@@ -1,0 +1,12 @@
+:host ::ng-deep .p-dialog .p-dialog-content::-webkit-scrollbar{
+    color: white;
+    display: none;
+}
+:host ::ng-deep .p-card .p-card-content {
+    padding: 0rem ;
+}
+
+/* #layout-menubar {
+    position: fixed;
+    width:98%;
+} */

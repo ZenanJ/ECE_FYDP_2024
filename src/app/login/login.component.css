@@ -1,0 +1,32 @@
+.loginButton{  
+    margin-top: 1em; 
+    justify-content: center; 
+    align-items: center;
+    display: flex;
+}
+.loginButton button{
+    justify-content:center; 
+    width:15em;
+}
+
+.redirectLink span:hover{
+    color: #3B82F6;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.redirectLink{
+    font-weight: bold;
+    font-size: 0.83em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+.loginButton{
+    margin-top: 0em;
+}
+.col-12{
+    padding: 0em 1rem !important;
+}
+
+h1{
+    margin-top: 0px;
+}

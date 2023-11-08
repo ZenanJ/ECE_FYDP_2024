@@ -1,0 +1,13 @@
+<p-menubar [model]="items">
+    <ng-template pTemplate="start">
+        &nbsp;&nbsp;<i class="pi pi-globe"></i>&nbsp;
+    </ng-template>
+    <div class="buttons">
+        <button pButton pRipple type="button" icon="pi pi-linkedin" class="p-button-rounded p-button-outlined" (click)="onClick()"></button>
+        <button pButton pRipple type="button" style="margin-left: 10px;" (click)="displayLoginDialog()" id="login">{{loginStatus}}</button>
+    </div>
+    <p-dialog [(visible)]="loginDialogVisibility"  
+     [modal]="true" [style]="{width: '40vw'}" [breakpoints]="{'600px': '75vw'}">
+        <app-login ></app-login>
+    </p-dialog>
+</p-menubar>

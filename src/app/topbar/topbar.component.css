@@ -1,0 +1,16 @@
+:host ::ng-deep .p-menubar .p-submenu-list{
+    z-index: 2;
+}
+
+:host ::ng-deep .p-menubar .p-submenu-list .p-submenu-list{
+    overflow-y: scroll;
+    max-height: 400px;
+}
+
+:host ::ng-deep .p-dialog .p-dialog-header {
+    padding: 1rem;
+}
+:host ::ng-deep .p-dialog{
+    min-width: 350px;
+    
+}

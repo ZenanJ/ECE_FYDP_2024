@@ -1,0 +1,75 @@
+<p-card header="Personal Info" [style]="{ 'margin-bottom': '1em', 'margin-top': '1em'}">
+    <div class="grid p-fluid">
+        <div class="col-12 sm:col-6 md:col-4">
+            <h5>First Name</h5>
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                <input type="text" pInputText placeholder="{{personalInfo.firstName}}" [disabled]="true">         
+            </div>
+        </div>
+        
+        <div class="col-12 sm:col-6 md:col-4">
+            <h5>Last Name</h5>
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                <input type="text" pInputText placeholder="{{personalInfo.lastName}}" [disabled]="true">        
+            </div>
+        </div>
+                
+        <div class="col-12 sm:col-6 md:col-4">
+            <h5>Phone Number</h5>
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-phone"></i></span>
+                <input type="text" pInputText placeholder="{{personalInfo.phoneNum}}" [disabled]="true">      
+            </div>
+        </div>
+
+        <div class="col-12 sm:col-6 md:col-4">
+            <h5>Email Address</h5>
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
+                <input type="text" pInputText placeholder="{{personalInfo.email}}" [disabled]="true">      
+            </div>
+        </div>
+    </div>
+</p-card>
+<p-card header="Vehicle Info" [style]="{ 'margin-bottom': '1em'}" id="vehicleInfoCard">
+    <p-card *ngFor=" let vehicle of vehicles" class="innerCard" [style]="{'margin':'0.5em 0em 0.5em 0em'}">
+        <div class="grid p-fluid">
+            <div class="col-6 md:col-3">
+                <h5>BRAND</h5>
+                <span>{{vehicle.brand | uppercase}}</span>
+            </div>
+            <div class="col-6 md:col-3">
+                <h5>COLOR</h5>
+                <span>{{vehicle.color | uppercase}}</span>
+            </div>
+            <div class="col-6 md:col-3">
+                <h5>TYPE</h5>
+                <span>{{vehicle.type | uppercase}}</span>
+            </div>
+            <div class="col-6 md:col-3">
+                <h5>PLANT</h5>
+                <span>{{vehicle.plateNum | uppercase}}</span>
+            </div>
+        </div>
+    </p-card>
+</p-card>
+<p-card header="History" [style]="{ 'margin-bottom': '1em'}">
+    <p-card *ngFor=" let trip of trips" class="innerCard" [style]="{'margin':'0.5em 0em 0.5em 0em'}">
+        <div class="grid p-fluid">
+            <div class="col-6 md:col-3">
+                <h5>DRIVER</h5>
+                <span>{{trip.driver.firstName | uppercase}}</span>
+            </div>
+            <div class="col-6 md:col-3">
+                <h5>CAR</h5>
+                <span>{{trip.vehicle.brand | uppercase}}</span>
+            </div>
+            <div class="col-6 md:col-3">
+                <h5>PASSAGER</h5>
+                <span>{{trip.passenger[0].firstName | uppercase}}</span>
+            </div>
+        </div>
+    </p-card>
+</p-card>

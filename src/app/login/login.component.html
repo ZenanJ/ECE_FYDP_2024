@@ -1,0 +1,52 @@
+
+    <div class="grid p-fluid" *ngIf="!signUp">
+        <h1 style="padding: 0 1rem;">LOGIN</h1>
+        <div class="col-12">
+            <h5>Phone Number</h5>
+            <p-inputMask type="text" mask="(999) 999-9999" [autoClear]="false"
+                [(ngModel)]="loginInfo.phoneNum" placeholder="(999) 999-9999">
+            </p-inputMask>       
+        </div>
+        <div class="col-12">
+            <h5>Show Password</h5>
+            <p-password [(ngModel)]="loginInfo.password" [toggleMask]="true" [feedback]="false"></p-password>
+        </div>      
+        <div class="redirectLink col-12">
+            <span (click)="toSignUp()">Sign Up?</span>
+        </div>
+        <div class="loginButton col-12" id="login">
+            <button pButton pRipple type="submit" (click)="loginSubmit()">LOGIN</button>
+        </div>    
+        <p-divider class="col-12" align="center" [style]="{'padding': '0em'}"><span>OR</span></p-divider>
+        <div class="loginButton col-12" id="GoogleButton">
+            <button pButton pRipple type="button" icon="pi pi-google">&nbsp;&nbsp;Login with Google</button>
+        </div>  
+    </div>
+
+    <div class="grid p-fluid" *ngIf="signUp" >
+        <h1 style="padding: 0 1rem;">SIGN UP</h1>
+        <div class="col-12">
+            <h5>Phone Number</h5>
+            <p-inputMask type="text" mask="(999) 999-9999" [autoClear]="false"
+                [(ngModel)]="signUpInfo.phoneNum" placeholder="(999) 999-9999">
+            </p-inputMask>       
+        </div>
+        <div class="col-12">
+            <h5>Email Address</h5>
+            <input type="text" pInputText class="p-inputtext" [(ngModel)]="signUpInfo.email" >     
+        </div>
+        <div class="col-12">
+            <h5>Show Password</h5>
+            <p-password [(ngModel)]="signUpInfo.password" [toggleMask]="true" [feedback]="false"></p-password>
+        </div>
+        <div class="redirectLink col-12">
+            <span (click)="toLogin()">Already have an account?</span>
+        </div>
+        <div class="loginButton col-12" id="login" >
+            <button pButton pRipple type="submit" (click)="signUpSubmit()">SIGN UP</button>
+        </div>   
+        <p-divider class="col-12" align="center" [style]="{'padding': '0em'}"><span>OR</span></p-divider>
+        <div class="loginButton col-12" id="GoogleButton" style="margin-top: 0em !important;">
+            <button pButton pRipple type="button" icon="pi pi-google">&nbsp;&nbsp;Sign up with Google</button>
+        </div> 
+    </div>
