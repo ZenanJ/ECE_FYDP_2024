@@ -13,6 +13,7 @@ import {StyleClassModule} from 'primeng/styleclass';
 import {CardModule} from 'primeng/card';
 import {InputTextModule} from 'primeng/inputtext';
 import {ScrollTopModule} from 'primeng/scrolltop';
+import { HttpClientModule } from '@angular/common/http'; 
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +21,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
+
+import { HttpRequestService } from './services/http-request.service';
 
 
 @NgModule({
@@ -45,9 +48,12 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
     StyleClassModule,
     CardModule,
     InputTextModule,
-    ScrollTopModule
+    ScrollTopModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    HttpRequestService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
