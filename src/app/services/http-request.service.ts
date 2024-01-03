@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class HttpRequestService {
-  private apiUrl = 'http://localhost:10001/api/courses';
+  private apiUrl = 'http://localhost:10001/tut/books';
 
   constructor(private http: HttpClient) {}
 
@@ -18,9 +18,6 @@ export class HttpRequestService {
       catchError((error: HttpErrorResponse) => this.handleError(error))
     );
   }
-  // getData(): Observable<any> {
-  //   return this.http.get(this.apiUrl);
-  // }
 
   private handleError(error: HttpErrorResponse): Observable<never> {
     console.error('Error fetching data:', error);

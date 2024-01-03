@@ -14,16 +14,19 @@ import {CardModule} from 'primeng/card';
 import {InputTextModule} from 'primeng/inputtext';
 import {ScrollTopModule} from 'primeng/scrolltop';
 import { HttpClientModule } from '@angular/common/http'; 
+import { AppRoutingModule } from './app-routing.module';
+import { MessagesModule } from 'primeng/messages';
+import { ToastModule } from 'primeng/toast';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 
-import { HttpRequestService } from './services/http-request.service';
 
+import { HttpRequestService } from './services/http-request.service';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -49,10 +52,13 @@ import { HttpRequestService } from './services/http-request.service';
     CardModule,
     InputTextModule,
     ScrollTopModule,
-    HttpClientModule
+    HttpClientModule,
+    MessagesModule,
+    ToastModule
   ],
   providers: [
-    HttpRequestService
+    HttpRequestService,
+    MessageService
   ],
   bootstrap: [AppComponent]
 })
