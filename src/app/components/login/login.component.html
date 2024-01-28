@@ -4,7 +4,7 @@
         <div class="col-12">
             <h4>Phone Number</h4>
             <p-inputMask type="text" mask="(999) 999-9999" [autoClear]="false"
-                [(ngModel)]="phoneNum" placeholder="(999) 999-9999">
+                [(ngModel)]="phone_num" placeholder="(999) 999-9999">
             </p-inputMask>  
         </div>
         <div class="col-12">
@@ -26,18 +26,26 @@
     <div class="grid p-fluid" *ngIf="signUp" >
         <h1 style="padding: 0 1rem;">SIGN UP</h1>
         <div class="col-12">
+            <h4>First Name</h4>
+            <input type="text" pInputText class="p-inputtext" [(ngModel)]="signUpInfo.personalBasicInfo.firstName" >     
+        </div>
+        <div class="col-12">
+            <h4>Last Name</h4>
+            <input type="text" pInputText class="p-inputtext" [(ngModel)]="signUpInfo.personalBasicInfo.lastName" >     
+        </div>
+        <div class="col-12">
             <h4>Phone Number</h4>
             <p-inputMask type="text" mask="(999) 999-9999" [autoClear]="false"
-                [(ngModel)]="phoneNum" placeholder="(999) 999-9999">
+                [(ngModel)]="phone_num" placeholder="(999) 999-9999">
             </p-inputMask>       
         </div>
         <div class="col-12">
             <h4>Email Address</h4>
-            <input type="text" pInputText class="p-inputtext" [(ngModel)]="authInfo.email" >     
+            <input type="text" pInputText class="p-inputtext" [(ngModel)]="signUpInfo.personalBasicInfo.email" >     
         </div>
         <div class="col-12">
             <h4>Show Password</h4>
-            <p-password [(ngModel)]="authInfo.password" [toggleMask]="true" [feedback]="false"></p-password>
+            <p-password [(ngModel)]="signUpInfo.password" [toggleMask]="true" [feedback]="false"></p-password>
         </div>
         <div class="redirectLink col-12">
             <span (click)="toLogin()">Already have an account?</span>

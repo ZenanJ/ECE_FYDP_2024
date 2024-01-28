@@ -17,16 +17,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { MessagesModule } from 'primeng/messages';
 import { ToastModule } from 'primeng/toast';
+import { CalendarModule } from 'primeng/calendar';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { TopbarComponent } from './topbar/topbar.component';
-import { MyProfileComponent } from './my-profile/my-profile.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { TopbarComponent } from './components/topbar/topbar.component';
+import { MyProfileComponent } from './components/my-profile/my-profile.component';
 
 
 import { HttpRequestService } from './services/http-request.service';
 import { MessageService } from 'primeng/api';
+import { CookieService } from 'ngx-cookie-service';
+import { TripPostsComponent } from './components/trip-posts/trip-posts.component';
+import { PostAsDriverComponent } from './components/post-as-driver/post-as-driver.component';
+import { PostAsPassengerComponent } from './components/post-as-passenger/post-as-passenger.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +39,10 @@ import { MessageService } from 'primeng/api';
     HomeComponent,
     LoginComponent,
     TopbarComponent,
-    MyProfileComponent
+    MyProfileComponent,
+    TripPostsComponent,
+    PostAsDriverComponent,
+    PostAsPassengerComponent
   ],
   imports: [
     BrowserModule,
@@ -54,11 +62,13 @@ import { MessageService } from 'primeng/api';
     ScrollTopModule,
     HttpClientModule,
     MessagesModule,
-    ToastModule
+    ToastModule,
+    CalendarModule
   ],
   providers: [
     HttpRequestService,
-    MessageService
+    MessageService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

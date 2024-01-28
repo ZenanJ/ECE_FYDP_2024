@@ -2,13 +2,17 @@ import { Injectable } from '@angular/core';
 import { PersonalBasicInfo } from '../models/personal-basic-info.model';
 import { TripInfo } from '../models/trip-info.model';
 import { VehicleInfo } from '../models/vehicle-info.model';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders  } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TripInfoService {
 
-  constructor() { }
+  private apiUrl = 'http://localhost:10001/auth';
+
+  constructor( private http: HttpClient ) { }
 // temp fake information
   vehicle1: VehicleInfo = {
     brand: "Lexus",
@@ -18,7 +22,7 @@ export class TripInfoService {
   }
   driver1: PersonalBasicInfo = {
     personalID: 123,
-    phoneNum: 1231231234,
+    phone_num: 1231231234,
     firstName: 'dri',
     lastName: '1',
     email: 'z242',
@@ -27,14 +31,14 @@ export class TripInfoService {
 
   passenger1: PersonalBasicInfo = {
     personalID: 123,
-    phoneNum: 1231231234,
+    phone_num: 1231231234,
     firstName: 'pas',
     lastName: '1',
     email: 'z242'
   }
   passenger2: PersonalBasicInfo = {
     personalID: 123,
-    phoneNum: 1231231234,
+    phone_num: 1231231234,
     firstName: 'pas',
     lastName: '1',
     email: 'z242'
@@ -48,4 +52,9 @@ export class TripInfoService {
   }
 
   trips: TripInfo[] = [this.trip1, this.trip1];
+
+  getCarpoolTrips(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/carpool-trips`);
+
+  }
 }

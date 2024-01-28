@@ -1,0 +1,48 @@
+<p-card header="Create Trip Post" [style]="{ 'margin-bottom': '1em', 'margin-top': '1em'}">
+    <div class="grid p-fluid">
+  
+      <div class="col-12">
+        <h5>Departure Date and Time</h5>
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="pi pi-calendar"></i></span>
+          <p-calendar [(ngModel)]="departureDate" [showTime]="true" [showSeconds]="true"></p-calendar>
+        </div>
+      </div>
+  
+      <div class="col-12 sm:col-6 md:col-4">
+        <h5>Departure City</h5>
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="pi pi-map-marker"></i></span>
+          <input type="text" pInputText placeholder="Departure city">
+        </div>
+      </div>
+  
+      <div class="col-12 sm:col-6 md:col-4">
+        <h5>Destination City</h5>
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="pi pi-map-marker"></i></span>
+          <input type="text" pInputText placeholder="Destination city">
+        </div>
+      </div>
+  
+      <div class="col-12 sm:col-6 md:col-4">
+        <h5>Capability</h5>
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="pi pi-users"></i></span>
+          <input type="number" pInputText placeholder="Number of seats available">
+        </div>
+      </div>
+
+      <div class="col-12">
+        <h5>Vehicle</h5>
+        <!-- Add a dropdown or selection mechanism for the user to choose their vehicle -->
+      </div>
+      <div class="col-12" style="">
+        <div class="col-12 sm:col-6 md:col-6">
+            <!-- Add a button to submit the trip post -->
+            <button pButton type="button" label="Create Post"></button>
+        </div>
+      </div>
+      
+    </div>
+  </p-card>

@@ -1,0 +1,19 @@
+<div class="carpool-container">
+    <div class="carpool-card" *ngFor="let trip of carpoolTrips">
+      <p-card header="{{ trip.departureCity }} to {{ trip.destinationCity }}">
+        <div class="carpool-info">
+          <p>
+            <strong>Start Time:</strong> {{ trip.startTime }}
+          </p>
+          <p>
+            <strong>Vehicle Body Type:</strong> {{ trip.vehicleBodyType }}
+          </p>
+          <p>
+            <strong>Capability:</strong> {{ trip.capability }}
+          </p>
+          <img [src]="trip.vehiclePicture" alt="Vehicle" />
+        </div>
+        <button pButton label="Apply" (click)="applyForTrip(trip)"></button>
+      </p-card>
+    </div>
+  </div>

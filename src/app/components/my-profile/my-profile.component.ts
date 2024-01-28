@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
-import { TripInfo } from '../models/trip-info.model';
-import { VehicleInfo } from '../models/vehicle-info.model';
-import { VehicleInfoService } from '../services/vehicle-info.service';
-import { TripInfoService } from '../services/trip-info.service';
-import { PersonalInfoService } from '../services/personal-info.service';
-import { PersonalBasicInfo } from '../models/personal-basic-info.model';
+import { TripInfo } from '../../models/trip-info.model';
+import { VehicleInfo } from '../../models/vehicle-info.model';
+import { VehicleInfoService } from '../../services/vehicle-info.service';
+import { TripInfoService } from '../../services/trip-info.service';
+import { PersonalInfoService } from '../../services/personal-info.service';
+import { PersonalBasicInfo } from '../../models/personal-basic-info.model';
+
 
 @Component({
   selector: 'app-my-profile',
@@ -15,6 +16,9 @@ import { PersonalBasicInfo } from '../models/personal-basic-info.model';
 export class MyProfileComponent {
   ngOnInit() {
     this.primengConfig.ripple = true;
+    this.personalInfoService.personalInfo$.subscribe((personalInfo) => {
+      this.personalInfo = personalInfo;
+    });
   }
 
   constructor(
@@ -26,7 +30,7 @@ export class MyProfileComponent {
 
   vehicles: VehicleInfo[] = this.vehicleInfoService.vehicles;
   trips: TripInfo[] = this.tripService.trips;
-  personalInfo: PersonalBasicInfo = this.personalInfoService.personalInfo;
+  personalInfo?: PersonalBasicInfo;
   
-
+  
 }

@@ -8,6 +8,6 @@
     </div>
     <p-dialog [(visible)]="loginDialogVisibility"  
      [modal]="true" [style]="{width: '40vw'}" [breakpoints]="{'600px': '75vw'}">
-        <app-login></app-login>
+        <app-login (loginSuccess)="onLoginSuccess()"></app-login>
     </p-dialog>
 </p-menubar>

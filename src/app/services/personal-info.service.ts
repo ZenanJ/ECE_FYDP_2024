@@ -1,21 +1,33 @@
 import { Injectable } from '@angular/core';
 import { PersonalBasicInfo } from '../models/personal-basic-info.model';
+import { AuthService } from '../services/auth.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonalInfoService {
+  _personalInfo?: PersonalBasicInfo;
+  _isAuthenticated: boolean = false;
 
-  constructor() { }
+  private personalInfoSubject = new BehaviorSubject<PersonalBasicInfo>({
+    personalID: 1,
+    phone_num: 1234567890,
+    firstName: 'Test',
+    lastName: 'User',
+    email: 'ZenanJ@example.com',
+  });
+  personalInfo$ = this.personalInfoSubject.asObservable();
 
-  //provide fake personal info
-
-  personalInfo: PersonalBasicInfo = {
-    personalID: 111,
-    phoneNum: 123123123,
-    firstName: "eric",
-    lastName: "jiang",
-    email: "z242jian@gmail"  }
-
+  constructor(
+    private authService: AuthService
+  ) { 
+    this.authService.isAuthenticated$.subscribe((isAuthenticated) => {
+      this._isAuthenticated = isAuthenticated;
+    });
+    this.authService.personalInfo$.subscribe((personalInfo) => {
+      this.personalInfoSubject.next(personalInfo);
+    });
+  }
 
 }

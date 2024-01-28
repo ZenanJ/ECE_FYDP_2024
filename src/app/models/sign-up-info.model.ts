@@ -1,6 +1,7 @@
+import { PersonalBasicInfo } from "./personal-basic-info.model";
+
 export interface SignUpInfo {
-    phoneNum?: number;
-    email?: string;
+    personalBasicInfo: PersonalBasicInfo;
     password?: string;
 
 }
