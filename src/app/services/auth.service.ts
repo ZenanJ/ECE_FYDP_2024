@@ -7,7 +7,7 @@ import { PersonalBasicInfo } from '../models/personal-basic-info.model';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:10001/auth'; // Replace with your API URL
+  private apiUrl = 'http://3.80.129.189:10001/auth'; // Replace with your API URL
 
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
   isAuthenticated$ = this.isAuthenticatedSubject.asObservable();
