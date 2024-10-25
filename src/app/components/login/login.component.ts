@@ -62,6 +62,9 @@ export class LoginComponent implements OnInit{
           this.showMessage('success', 'Success', 'SignUp Success');
           this.loginSuccess.emit();
           // Handle the successful response
+          
+          // testing
+          
         },
         error: (error) => {
           console.error("SignUp error:", error);

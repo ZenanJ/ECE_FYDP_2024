@@ -1,0 +1,22 @@
+/* .trip-list {
+    display: flex;
+    flex-direction: column; 
+    gap: 16px; 
+    width: 100%;
+    align-items: center; 
+} */
+.trip-list {
+    display: flex;
+    flex-direction: column; /* Arrange children vertically */
+    gap: 16px; /* Space between each card */
+    width: 100%; /* Ensure the list takes full width of the parent */
+    padding: 16px; /* Optional: Add some padding around the list */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+
+.trip-card {
+    width: 90%; /* Set the width of each card to occupy 90% of the container's width */
+    max-width: 600px; /* Optional: Set a maximum width for each card */
+}
+  

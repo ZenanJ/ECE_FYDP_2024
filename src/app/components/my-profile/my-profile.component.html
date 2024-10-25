@@ -34,42 +34,25 @@
     </div>
 </p-card>
 <p-card header="Vehicle Info" [style]="{ 'margin-bottom': '1em'}" id="vehicleInfoCard">
-    <p-card *ngFor=" let vehicle of vehicles" class="innerCard" [style]="{'margin':'0.5em 0em 0.5em 0em'}">
-        <div class="grid p-fluid">
-            <div class="col-6 md:col-3">
-                <h5>BRAND</h5>
-                <span>{{vehicle.brand | uppercase}}</span>
-            </div>
-            <div class="col-6 md:col-3">
-                <h5>COLOR</h5>
-                <span>{{vehicle.color | uppercase}}</span>
-            </div>
-            <div class="col-6 md:col-3">
-                <h5>TYPE</h5>
-                <span>{{vehicle.type | uppercase}}</span>
-            </div>
-            <div class="col-6 md:col-3">
-                <h5>PLANT</h5>
-                <span>{{vehicle.plateNum | uppercase}}</span>
-            </div>
-        </div>
-    </p-card>
+    <div class="vehicle-list">
+        <app-vehicle-card
+          *ngFor="let vehicle of vehicles"
+          [vehicle]="vehicle">
+        </app-vehicle-card>
+    </div>
+    <button pButton type="button"> + NEW VEHICLE</button>
 </p-card>
 <p-card header="History" [style]="{ 'margin-bottom': '1em'}">
-    <p-card *ngFor=" let trip of trips" class="innerCard" [style]="{'margin':'0.5em 0em 0.5em 0em'}">
-        <div class="grid p-fluid">
-            <div class="col-6 md:col-3">
-                <h5>DRIVER</h5>
-                <span>{{trip.driver.firstName | uppercase}}</span>
-            </div>
-            <div class="col-6 md:col-3">
-                <h5>CAR</h5>
-                <span>{{trip.vehicle.brand | uppercase}}</span>
-            </div>
-            <div class="col-6 md:col-3">
-                <h5>PASSAGER</h5>
-                <span>{{trip.passenger[0].firstName | uppercase}}</span>
-            </div>
-        </div>
-    </p-card>
+    <app-carpool-trip-card 
+        *ngFor="let trip of trips"
+        [tripID]="trip.tripID"
+        [departure]="trip.departure"
+        [destination]="trip.destination"
+        [departureTime]="trip.departureTime"
+        [seatsAvailable]="trip.seatsAvailable"
+        [price]="trip.price"
+        [driverName]="trip.driverName"
+        [buttonState]="tripState"
+        (buttonClicked)="handleButtonClick($event)" >
+    </app-carpool-trip-card>
 </p-card>

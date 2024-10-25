@@ -30,6 +30,10 @@ export class MyProfileComponent {
 
   vehicles: VehicleInfo[] = this.vehicleInfoService.vehicles;
   trips: TripInfo[] = this.tripService.trips;
+  tripState: string = 'disabled';
+  handleButtonClick(action: string) {
+  
+  }
   personalInfo?: PersonalBasicInfo;
   
   

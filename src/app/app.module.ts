@@ -32,6 +32,11 @@ import { CookieService } from 'ngx-cookie-service';
 import { TripPostsComponent } from './components/trip-posts/trip-posts.component';
 import { PostAsDriverComponent } from './components/post-as-driver/post-as-driver.component';
 import { PostAsPassengerComponent } from './components/post-as-passenger/post-as-passenger.component';
+import { CarpoolTripCardComponent } from './components/carpool-trip-card/carpool-trip-card.component';
+import { CurrentTripPageComponent } from './components/current-trip-page/current-trip-page.component';
+import { RequestTripPageComponent } from './components/posts/request-trip-page/request-trip-page.component';
+import { OfferTripPageComponent } from './components/posts/offer-trip-page/offer-trip-page.component';
+import { VehicleCardComponent } from './components/vehicle-card/vehicle-card.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +47,12 @@ import { PostAsPassengerComponent } from './components/post-as-passenger/post-as
     MyProfileComponent,
     TripPostsComponent,
     PostAsDriverComponent,
-    PostAsPassengerComponent
+    PostAsPassengerComponent,
+    CarpoolTripCardComponent,
+    CurrentTripPageComponent,
+    RequestTripPageComponent,
+    OfferTripPageComponent,
+    VehicleCardComponent
   ],
   imports: [
     BrowserModule,

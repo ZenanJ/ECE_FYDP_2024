@@ -33,18 +33,21 @@ export class TopbarComponent implements OnInit{
         },
         {
           label: 'Current Trip',
+          routerLink: ['/current-trip'],
           icon: 'pi pi-car'
         },
         {
-          label: 'Post',
+          label: 'Posts',
           icon: 'pi pi-map',
           items: [
             {
-              label: 'Want',
+              label: 'Request a Ride',
+              routerLink: ['posts/request-trip'],
               icon: 'pi pi-money-bill'
             },
             {
-              label: 'Need',
+              label: 'Offer a Ride',
+              routerLink: ['posts/offer-trip'],
               icon: 'pi pi-flag'
             }
           ]

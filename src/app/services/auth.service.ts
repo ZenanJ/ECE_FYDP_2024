@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
-import { BehaviorSubject, Observable, Subject, tap } from 'rxjs';
+import { BehaviorSubject, Observable, of, Subject, tap } from 'rxjs';
 import { PersonalBasicInfo } from '../models/personal-basic-info.model';
 
 @Injectable({
@@ -45,8 +45,30 @@ export class AuthService {
       // Add any other headers if required
     });
     
-    return this.http.post(`${this.apiUrl}/login`, user, { headers: headers }).pipe(
-      // Handle the response
+    // return this.http.post(`${this.apiUrl}/login`, user, { headers: headers }).pipe(
+    //   // Handle the response
+    //   tap((response: any) => {
+    //     const personalInfo: PersonalBasicInfo = {
+    //       personalID: response._id,
+    //       phone_num: response.phone_num,
+    //       firstName: response.first_name,
+    //       lastName: response.last_name,
+    //       email: response.email,
+    //       // Add other properties as needed
+    //     };
+    //     this.isAuthenticatedSubject.next(true);
+    //     this.personalInfoSubject.next(personalInfo);
+    //   })
+    // );
+
+    return of({
+      _id: '12345',
+      phone_num: '555-1234',
+      first_name: 'John',
+      last_name: 'Doe',
+      email: 'john.doe@example.com',
+      // Add other mock properties as needed
+    }).pipe(
       tap((response: any) => {
         const personalInfo: PersonalBasicInfo = {
           personalID: response._id,

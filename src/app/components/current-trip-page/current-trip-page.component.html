@@ -1,0 +1,31 @@
+<h2>Trips as Driver</h2>
+<div class="trip-list">
+  <app-carpool-trip-card
+    *ngFor="let trip of driverTrips"
+    [tripID]="trip.tripID"
+    [departure]="trip.departure"
+    [destination]="trip.destination"
+    [departureTime]="trip.departureTime"
+    [seatsAvailable]="trip.seatsAvailable"
+    [price]="trip.price"
+    [driverName]="trip.driverName"
+    [buttonState]="tripState"
+    (buttonClicked)="handleButtonClick($event)" >
+  </app-carpool-trip-card>
+</div>
+
+<h2>Trips as Passenger</h2>
+<div class="trip-list">
+  <app-carpool-trip-card
+    *ngFor="let trip of passengerTrips"
+    [tripID]="trip.tripID"
+    [departure]="trip.departure"
+    [destination]="trip.destination"
+    [departureTime]="trip.departureTime"
+    [seatsAvailable]="trip.seatsAvailable"
+    [price]="trip.price"
+    [driverName]="trip.driverName"
+    [buttonState]="tripState"
+    (buttonClicked)="handleButtonClick($event)" >
+  </app-carpool-trip-card>
+</div>

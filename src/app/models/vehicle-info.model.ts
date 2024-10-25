@@ -3,4 +3,6 @@ export interface VehicleInfo {
     color: string;
     type: string;
     plateNum: string;
+    model?: string;
+    year?: number;
 }

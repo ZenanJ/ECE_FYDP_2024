@@ -1,0 +1,14 @@
+<div class="card">
+    <h3>{{ departure }} → {{ destination }}</h3>
+    <p><strong>Departure Time:</strong> {{ departureTime }}</p>
+    <p><strong>Seats Available:</strong> {{ seatsAvailable }}</p>
+    <p><strong>Price:</strong> ${{ price }}</p>
+    <p><strong>Driver:</strong> {{ driverName }}</p>
+
+    <button pButton
+            type="button" 
+            *ngIf="buttonState !== 'disabled'" 
+            (click)="onButtonClick()">
+        {{ buttonState === 'finish' ? 'Finish Trip' : 'Take Trip' }}
+    </button>
+</div>
