@@ -1,0 +1,11 @@
+<div class="grid p-fluid">
+    <form [formGroup]="vehicleForm" (ngSubmit)="onSubmit()">
+        <input formControlName="brand" placeholder="Brand" />
+        <input formControlName="color" placeholder="Color" />
+        <input formControlName="type" placeholder="Type" />
+        <input formControlName="plateNum" placeholder="Plate Number" />
+        <input formControlName="model" placeholder="Model" />
+        <input formControlName="year" type="number" placeholder="Year" />
+        <button type="submit">Add Vehicle</button>
+    </form>
+</div>

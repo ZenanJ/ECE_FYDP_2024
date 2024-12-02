@@ -5,7 +5,7 @@
         <h5>Departure Date and Time</h5>
         <div class="p-inputgroup">
           <span class="p-inputgroup-addon"><i class="pi pi-calendar"></i></span>
-          <p-calendar [(ngModel)]="departureDate" [showTime]="true" [showSeconds]="true"></p-calendar>
+          <p-calendar [(ngModel)]="tripInfo.departureTime" [showTime]="true" [showSeconds]="true"></p-calendar>
         </div>
       </div>
   
@@ -13,7 +13,7 @@
         <h5>Departure City</h5>
         <div class="p-inputgroup">
           <span class="p-inputgroup-addon"><i class="pi pi-map-marker"></i></span>
-          <input type="text" pInputText placeholder="Departure city">
+          <input [(ngModel)]="tripInfo.departure" type="text" pInputText placeholder="Departure city">
         </div>
       </div>
   
@@ -21,7 +21,15 @@
         <h5>Destination City</h5>
         <div class="p-inputgroup">
           <span class="p-inputgroup-addon"><i class="pi pi-map-marker"></i></span>
-          <input type="text" pInputText placeholder="Destination city">
+          <input [(ngModel)]="tripInfo.destination" type="text" pInputText placeholder="Destination city">
+        </div>
+      </div>
+
+      <div class="col-12 sm:col-6 md:col-4">
+        <h5>Price per Person</h5>
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="pi pi-users"></i></span>
+          <input [(ngModel)]="tripInfo.price" type="number" pInputText placeholder="Price per Person">
         </div>
       </div>
   
@@ -29,14 +37,14 @@
         <h5>Passenger Number</h5>
         <div class="p-inputgroup">
           <span class="p-inputgroup-addon"><i class="pi pi-users"></i></span>
-          <input type="number" pInputText placeholder="Number of seats available">
+          <input [(ngModel)]="tripInfo.seatsAvailable" type="number" pInputText placeholder="Number of seats available">
         </div>
       </div>
 
       <div class="col-12" style="display: flex; justify-content: center; align-items: center;">
         <div class="col-12 sm:col-6 md:col-6">
             <!-- Add a button to submit the trip post -->
-            <button pButton type="button" label="Create Post"></button>
+            <button pButton type="button" label="Create Post" (click)="sendPost()"></button>
         </div>
       </div>
       

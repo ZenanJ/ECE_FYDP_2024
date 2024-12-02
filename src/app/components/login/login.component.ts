@@ -14,8 +14,8 @@ import { CookieService } from 'ngx-cookie-service';
 export class LoginComponent implements OnInit{
 
   authInfo: LoginInfo = {};
-  signUpInfo: SignUpInfo = {personalBasicInfo: {}};
-  phone_num: string = '';
+  signUpInfo: SignUpInfo = {};
+  phoneNum: string = '';
   signUp: boolean = false;
   @Output() loginSuccess: EventEmitter<void> = new EventEmitter<void>();
 
@@ -27,15 +27,15 @@ export class LoginComponent implements OnInit{
 
   }
   loginSubmit(){
-    this.authInfo.phone_num = convertStringToNumber(this.phone_num);
-    if (!this.authInfo.phone_num || !this.authInfo.password) {
+    this.authInfo.phoneNum = convertStringToNumber(this.phoneNum);
+    if (!this.authInfo.phoneNum || !this.authInfo.password) {
       this.showMessage('error', 'Error', 'Please fill in all fields');
       return;
     }
     this.authService.login(this.authInfo).subscribe({
         next: (response) => {
           console.log("Login successful:", response);
-          this.cookieService.set('authToken', response.token, { expires: 1 }); // Set a cookie that expires in 1 day
+          this.cookieService.set('authToken', response.token, { expires: response.expiresIn }); // Set a cookie that expires in 1 day
           this.showMessage('success', 'Success', 'Login Success');
           this.loginSuccess.emit();
         },
@@ -50,8 +50,8 @@ export class LoginComponent implements OnInit{
       });
   }
   signUpSubmit(){
-    this.signUpInfo.personalBasicInfo.phone_num = convertStringToNumber(this.phone_num);
-    if (!this.signUpInfo.personalBasicInfo.phone_num || !this.signUpInfo.password || !this.signUpInfo.personalBasicInfo.email) {
+    this.signUpInfo.phoneNum = convertStringToNumber(this.phoneNum);
+    if (!this.signUpInfo.phoneNum || !this.signUpInfo.password || !this.signUpInfo.email) {
       this.showMessage('error', 'Error', 'Please fill in all fields');
       return;
     }
@@ -100,9 +100,9 @@ export class LoginComponent implements OnInit{
   }
 
   cleanInput(){
-    this.phone_num = '';
+    this.phoneNum = '';
     this.authInfo = {};
-    this.signUpInfo = { personalBasicInfo: {}};
+    this.signUpInfo = {};
     this.signUp = false;
   }
 

@@ -4,7 +4,13 @@
     </ng-template>
     <div class="buttons">
         <button pButton pRipple type="button" icon="pi pi-linkedin" class="p-button-rounded p-button-outlined" (click)="onClick()"></button>
-        <button pButton pRipple type="button" style="margin-left: 10px;" (click)="displayLoginDialog()" id="login">{{loginStatus}}</button>
+        <button *ngIf="loginStatus === 'Login'" pButton pRipple type="button" style="margin-left: 10px;" (click)="displayLoginDialog()" id="login">
+            Login
+          </button>
+          <!-- Logout Button -->
+          <button *ngIf="loginStatus !== 'Login'" pButton pRipple type="button" style="margin-left: 10px;" (click)="logout()" id="logout">
+            Logout
+          </button>
     </div>
     <p-dialog [(visible)]="loginDialogVisibility"  
      [modal]="true" [style]="{width: '40vw'}" [breakpoints]="{'600px': '75vw'}">

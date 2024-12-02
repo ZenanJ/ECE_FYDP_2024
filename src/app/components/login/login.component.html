@@ -4,7 +4,7 @@
         <div class="col-12">
             <h4>Phone Number</h4>
             <p-inputMask type="text" mask="(999) 999-9999" [autoClear]="false"
-                [(ngModel)]="phone_num" placeholder="(999) 999-9999">
+                [(ngModel)]="phoneNum" placeholder="(999) 999-9999">
             </p-inputMask>  
         </div>
         <div class="col-12">
@@ -27,24 +27,24 @@
         <h1 style="padding: 0 1rem;">SIGN UP</h1>
         <div class="col-12">
             <h4>First Name</h4>
-            <input type="text" pInputText class="p-inputtext" [(ngModel)]="signUpInfo.personalBasicInfo.firstName" >     
+            <input type="text" pInputText class="p-inputtext" [(ngModel)]="signUpInfo.firstName" >     
         </div>
         <div class="col-12">
             <h4>Last Name</h4>
-            <input type="text" pInputText class="p-inputtext" [(ngModel)]="signUpInfo.personalBasicInfo.lastName" >     
+            <input type="text" pInputText class="p-inputtext" [(ngModel)]="signUpInfo.lastName" >     
         </div>
         <div class="col-12">
             <h4>Phone Number</h4>
             <p-inputMask type="text" mask="(999) 999-9999" [autoClear]="false"
-                [(ngModel)]="phone_num" placeholder="(999) 999-9999">
+                [(ngModel)]="phoneNum" placeholder="(999) 999-9999">
             </p-inputMask>       
         </div>
         <div class="col-12">
             <h4>Email Address</h4>
-            <input type="text" pInputText class="p-inputtext" [(ngModel)]="signUpInfo.personalBasicInfo.email" >     
+            <input type="text" pInputText class="p-inputtext" [(ngModel)]="signUpInfo.email" >     
         </div>
         <div class="col-12">
-            <h4>Show Password</h4>
+            <h4>Password</h4>
             <p-password [(ngModel)]="signUpInfo.password" [toggleMask]="true" [feedback]="false"></p-password>
         </div>
         <div class="redirectLink col-12">

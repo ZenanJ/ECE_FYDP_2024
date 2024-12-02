@@ -3,8 +3,8 @@
     <p><strong>Departure Time:</strong> {{ departureTime }}</p>
     <p><strong>Seats Available:</strong> {{ seatsAvailable }}</p>
     <p><strong>Price:</strong> ${{ price }}</p>
-    <p><strong>Driver:</strong> {{ driverName }}</p>
-
+    <p *ngIf="driverName"><strong>Driver:</strong> {{ driverName }}</p>
+    <p *ngIf="phoneNum"><strong>Phone Num:</strong> {{ phoneNum }}</p>
     <button pButton
             type="button" 
             *ngIf="buttonState !== 'disabled'" 

@@ -16,8 +16,16 @@
             <h5>PLATE</h5>
             <span>{{vehicle.plateNum | uppercase}}</span>
         </div>
+        <div class="col-6 md:col-3">
+            <h5>MODEL</h5>
+            <span>{{vehicle.model | uppercase}}</span>
+        </div>
+        <div class="col-6 md:col-3">
+            <h5>YEAR</h5>
+            <span>{{vehicle.year?.toString() | uppercase}}</span>
+        </div>
         <div class="col-12">
-            <button pButton type="button" style="max-width: 200px; justify-content: center; align-items: center; background: #FF3B30; border: 1px solid #FF3B30;">DELETE</button>
+            <button pButton type="button" (click)="onButtonClick()" style="max-width: 200px; justify-content: center; align-items: center; background: #FF3B30; border: 1px solid #FF3B30;">DELETE</button>
         </div>
     </div>
 </p-card>

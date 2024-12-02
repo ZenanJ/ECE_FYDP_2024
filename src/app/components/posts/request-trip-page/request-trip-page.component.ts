@@ -10,10 +10,23 @@ export class RequestTripPageComponent {
   constructor(
     private tripService: TripInfoService
   ){}
-  trips = this.tripService.trips;
+  trips: any[] = [];
   tripState: string = 'take';
   handleButtonClick(action: string) {
   
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loadTrips(); 
+  }
+  loadTrips(): void {
+    this.tripService.getActivePassengerTrips().subscribe(
+      (response: any[]) => {
+        this.trips = response; // Assign the returned array to the trips variable
+        console.log('Trips loaded:', this.trips); // Debug log
+      },
+      error => {
+        console.error('Error loading trips:', error); // Handle error
+      }
+    );
+  }
 }

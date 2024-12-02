@@ -8,7 +8,8 @@
       [departureTime]="trip.departureTime"
       [seatsAvailable]="trip.seatsAvailable"
       [price]="trip.price"
-      [driverName]="trip.driverName"
+      [driverName]="trip.driver.firstName"
+      [phoneNum]="trip.driver.phoneNum"
       [buttonState]="tripState"
       (buttonClicked)="handleButtonClick($event)">
     </app-carpool-trip-card>

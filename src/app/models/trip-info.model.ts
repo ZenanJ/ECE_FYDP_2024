@@ -10,6 +10,7 @@ export interface TripInfo {
     price: number;               // Price of the trip
     driverName: string;          // Name of the driver
     driver: PersonalBasicInfo;   // Driver's personal information (if needed)
-    passenger: PersonalBasicInfo[]; // List of passengers' personal information
     vehicle: VehicleInfo;        // Vehicle information for the trip
+    isDriverPost: boolean;
+    isActivate: boolean;
 }

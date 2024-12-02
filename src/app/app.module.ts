@@ -5,7 +5,7 @@ import { ButtonModule } from 'primeng/button';
 import {DialogModule} from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {InputMaskModule} from 'primeng/inputmask';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {PasswordModule} from 'primeng/password';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { DividerModule } from "primeng/divider";
@@ -37,6 +37,7 @@ import { CurrentTripPageComponent } from './components/current-trip-page/current
 import { RequestTripPageComponent } from './components/posts/request-trip-page/request-trip-page.component';
 import { OfferTripPageComponent } from './components/posts/offer-trip-page/offer-trip-page.component';
 import { VehicleCardComponent } from './components/vehicle-card/vehicle-card.component';
+import { VehiclePopupComponent } from './components/vehicle-popup/vehicle-popup.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { VehicleCardComponent } from './components/vehicle-card/vehicle-card.com
     CurrentTripPageComponent,
     RequestTripPageComponent,
     OfferTripPageComponent,
-    VehicleCardComponent
+    VehicleCardComponent,
+    VehiclePopupComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +75,8 @@ import { VehicleCardComponent } from './components/vehicle-card/vehicle-card.com
     HttpClientModule,
     MessagesModule,
     ToastModule,
-    CalendarModule
+    CalendarModule,
+    ReactiveFormsModule
   ],
   providers: [
     HttpRequestService,

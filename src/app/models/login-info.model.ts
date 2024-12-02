@@ -1,5 +1,5 @@
 export interface LoginInfo {
-    phone_num?: number;
+    phoneNum?: number;
     email?: string;
     password?: string;
 }

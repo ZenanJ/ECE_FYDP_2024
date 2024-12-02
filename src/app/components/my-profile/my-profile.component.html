@@ -20,7 +20,7 @@
             <h5>Phone Number</h5>
             <div class="p-inputgroup">
                 <span class="p-inputgroup-addon"><i class="pi pi-phone"></i></span>
-                <input type="text" pInputText [placeholder]="personalInfo?.phone_num || ''" [disabled]="true">      
+                <input type="text" pInputText [placeholder]="personalInfo?.phoneNum || ''" [disabled]="true">      
             </div>
         </div>
 
@@ -33,15 +33,15 @@
         </div>
     </div>
 </p-card>
-<p-card header="Vehicle Info" [style]="{ 'margin-bottom': '1em'}" id="vehicleInfoCard">
+<!-- <p-card header="Vehicle Info" [style]="{ 'margin-bottom': '1em'}" id="vehicleInfoCard">
     <div class="vehicle-list">
         <app-vehicle-card
           *ngFor="let vehicle of vehicles"
           [vehicle]="vehicle">
         </app-vehicle-card>
     </div>
-    <button pButton type="button"> + NEW VEHICLE</button>
-</p-card>
+    <button pButton type="button" (click)="vehiclePopUp()"> + NEW VEHICLE</button>
+</p-card> -->
 <p-card header="History" [style]="{ 'margin-bottom': '1em'}">
     <app-carpool-trip-card 
         *ngFor="let trip of trips"
@@ -56,3 +56,7 @@
         (buttonClicked)="handleButtonClick($event)" >
     </app-carpool-trip-card>
 </p-card>
+<p-dialog [(visible)]="loginDialogVisibility"  
+    [modal]="true" [style]="{width: '40vw'}" [breakpoints]="{'600px': '75vw'}">
+    <app-vehicle-popup ></app-vehicle-popup>
+</p-dialog>

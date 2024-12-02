@@ -12,7 +12,7 @@ export class PersonalInfoService {
 
   private personalInfoSubject = new BehaviorSubject<PersonalBasicInfo>({
     personalID: 1,
-    phone_num: 1234567890,
+    phoneNum: 1234567890,
     firstName: 'Test',
     lastName: 'User',
     email: 'ZenanJ@example.com',
