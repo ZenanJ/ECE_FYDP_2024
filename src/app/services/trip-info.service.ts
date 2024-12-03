@@ -12,7 +12,7 @@ import { of } from 'rxjs';  // Used to return a fallback observable on error
 })
 export class TripInfoService {
 
-  private apiUrl = 'http://localhost:8005/carpool-trips';
+  private apiUrl = 'http://ec2-44-202-83-123.compute-1.amazonaws.com:8005/carpool-trips';
 
   constructor( private http: HttpClient ) { }
 

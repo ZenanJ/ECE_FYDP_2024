@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class HttpRequestService {
-  private apiUrl = 'http://localhost:10001/tut/books';
+  private apiUrl = 'http://ec2-44-202-83-123.compute-1.amazonaws.com:8005/tut/books';
 
   constructor(private http: HttpClient) {}
 

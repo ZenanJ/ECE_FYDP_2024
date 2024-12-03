@@ -10,7 +10,7 @@ import { of } from 'rxjs';  // Used to return a fallback observable on error
 })
 export class VehicleInfoService {
 
-  private apiUrl = 'http://localhost:8005/'
+  private apiUrl = 'http://ec2-44-202-83-123.compute-1.amazonaws.com:8005/'
   constructor( private http: HttpClient ) { 
   }
 

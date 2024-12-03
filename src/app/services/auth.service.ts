@@ -8,7 +8,7 @@ import { Router } from '@angular/router'; // Import Router
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:8005/auth'; // Replace with your API URL
+  private apiUrl = 'http://ec2-44-202-83-123.compute-1.amazonaws.com:8005/auth'; // Replace with your API URL
 
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
   isAuthenticated$ = this.isAuthenticatedSubject.asObservable();
