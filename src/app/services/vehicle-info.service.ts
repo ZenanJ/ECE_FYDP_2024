@@ -48,7 +48,7 @@ export class VehicleInfoService {
     });
     return this.http.put<any>(
       `${this.apiUrl}/?vehicle=${VehicleId}`,
-      { headers, withCredentials: true }
+      { headers}
     ).pipe(
       tap((response: any) => {
         if (response.success) {

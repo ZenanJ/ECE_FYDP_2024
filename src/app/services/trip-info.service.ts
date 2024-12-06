@@ -96,7 +96,7 @@ export class TripInfoService {
         'Authorization': `Bearer ${jwtToken}`
     });
 
-    return this.http.post<any>(`${this.apiUrl}/add-post?userId=${userId}`, TripInfo, { headers: headers, withCredentials: true })
+    return this.http.post<any>(`${this.apiUrl}/add-post?userId=${userId}`, TripInfo, { headers: headers })
       .pipe(
         tap((response: any) => {
             console.log(`response recieved: ${response}`)
@@ -165,7 +165,7 @@ export class TripInfoService {
     return this.http.put<any>(
       `${this.apiUrl}/expire?tripId=${tripId}`,
       payload,
-      { headers, withCredentials: true }
+      { headers }
     ).pipe(
       tap((response: any) => {
         if (response.success) {
